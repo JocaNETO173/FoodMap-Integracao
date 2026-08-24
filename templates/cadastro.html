@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodMap - Cadastro</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
 
     <div class="auth-wrapper">
@@ -16,8 +18,10 @@
             </div>
         </div>
 
+
+
         <div class="auth-card">
-            <form action="/login" method="GET">
+            <form action="/cadastro_usuario" method="POST">
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label for="nome">Digite seu nome:</label>
                     <input type="text" id="nome" name="nome" class="form-input" required>
@@ -30,15 +34,25 @@
 
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label for="senha">Digite sua senha:</label>
-                    <input type="password" id="senha" name="senha" class="form-input" required>
+                    <input min="8" type="password" id="senha" name="senha" class="form-input" required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 18px;">
                     <label for="confirm-senha">Confirme sua senha:</label>
-                    <input type="password" id="confirm-senha" name="confirm-senha" class="form-input" required>
+                    <input min="8" type="password" id="confirm-senha" name="confirm-senha" class="form-input" required>
                 </div>
 
-                <button type="submit" class="btn-primary-red">Login</button>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                    <li class="alert alert-info">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+
+                <button type="submit" class="btn-primary-red">Cadastrar-se</button>
             </form>
         </div>
 
@@ -48,4 +62,5 @@
     </div>
 
 </body>
+
 </html>

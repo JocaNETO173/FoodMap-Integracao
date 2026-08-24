@@ -21,6 +21,17 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+.flashes {
+    list-style: none;
+    padding: 0;
+}
+.flashes .alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 body {
     min-height: 100vh;
     background-color: #FFFFFF;
