@@ -126,5 +126,28 @@ def buscar_restaurantes(termo=""):
     conexao.close()
     return restaurantes
 
+@app.route("/cadastro-restaurantes", methods = "GET, POST")
+def cadastroRestaurantes():
+    nomeRestaurante = request.form.get("")
+    descricao = request.form.get("") 
+    endereco = request.form.get("") 
+    URLImage = request.form.get("") 
+
+    try:
+
+        conexao = mysql.connector.connect(**bd_config)
+        cursor = conexao.cursor(dictionary=True)
+
+        query = "INSERT INTO restaurantes (NOME, CATEGORIA, ENDERECO, IMAGEM) VALUES (%s, %s, %s, %s)"
+        cursor.execute(query, (nomeRestaurante, descricao, endereco, URLImage))
+        conexao.commit()
+
+        cursor.close()
+        conexao.close()
+    except mysql.connector.Error as err:
+        return f"Erro ao gravar no Banco: {err}"
+    
+    return render_template("restaurante_cadastro.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
