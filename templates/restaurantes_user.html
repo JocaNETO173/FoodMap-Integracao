@@ -13,32 +13,32 @@
     <header class="main-header">
         <div class="logo-container logo-reload">
             <div class="logo-brand font-decorative">
-                Fo<!-- Inserir ícone de pin -->dMap
+                Fo<span class="pin-icon"></span>dMap
             </div>
         </div>
 
-        <button class="gear-btn" id="gearBtn" aria-label="Opções do usuário">
-            <!-- adicionar ícone de engrenagem -->
-        </button>
+        <span class="gear-btn" id="gearBtn" role="button" aria-label="Opções do usuário" tabindex="0">
+            <img src="/static/gear.png" alt="">
+        </span>
 
         <div class="user-dropdown" id="userDropdown">
-            <div class="user-info-name">João Silva</div>
-            <div class="user-info-email">joao.silva@email.com</div>
+            <div class="user-info-name">{{ nome }}</div>
+            <div class="user-info-email">{{ email }}</div>
             <div class="dropdown-divider"></div>
             <a href="/login" class="logout-btn">Sair da conta</a>
         </div>
     </header>
 
     <main class="content-container">
-        <h1>Olá {{</h1>
+        
+        <h1>Olá {{ nome }}!</h1>
         <div class="search-bar-container">
-            <!-- adicionar ícone de lupa -->
-            <form method="post">
+            <span class="search-icon" aria-hidden="true"></span>
+            <form method="POST">
                 <input type="text" name="termo" value="{{ termo }}" class="search-input" placeholder="Pesquise aqui">
             </form>
         </div>
 
-        <!-- ESPAÇO RESERVADO PARA OS RESTAURANTES DO BANCO DE DADOS -->
         <div id="restaurants-list-container">
             <h3>Resultados:</h3>
             <ul>
