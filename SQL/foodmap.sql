@@ -6,7 +6,7 @@ ID INT AUTO_INCREMENT PRIMARY KEY,
 EMAIL VARCHAR(255) NOT NULL UNIQUE,
 NOME VARCHAR(100) NOT NULL,
 SENHA VARCHAR(20) NOT NULL,
-ADM BOOLEAN
+ADM BOOLEAN NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS restaurante(
@@ -21,4 +21,4 @@ IMAGEM VARCHAR(40) NOT NULL
 SELECT * FROM usuario;
 
 insert into usuario (EMAIL, NOME, SENHA, ADM) VALUES ("teste@gmail.com", "Teste", 123456789, false);
-insert into usuario (EMAIL, NOME, SENHA, ADM) VALUES ("teste2@gmail.com", "Teste2", 123456789, true);
+insert into usuario (NOME, EMAIL, SENHA, ADM) VALUES ("Admin", "linuxmint@gmail.com", "patoquack", true);
