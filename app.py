@@ -1,5 +1,5 @@
 # Flash é utilizado para dar alertas ao usuário na tela
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, session
 import mysql.connector
 
 app = Flask(__name__)
@@ -19,9 +19,43 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+
+    if request.method == "GET":
+        return render_template("login.html")
+
+    email = request.form.get("email")
+    senha = request.form.get("senha")
+    # baseado no email, ele retornará se a coluna ADM do campo deste email é true ou false
+
+    try:
+        conexao = mysql.connector.connect(**bd_config)
+        cursor = conexao.cursor(dictionary=True)
+
+        query = "SELECT NOME, EMAIL, ADM FROM usuario WHERE EMAIL = %s AND SENHA = %s"
+        cursor.execute(query, (email, senha))
+        usuario = cursor.fetchone()
+
+        cursor.close()
+        conexao.close()
+
+    except mysql.connector.Error as err:
+        return f"Erro ao consultar o banco: {err}"
+
+    if not usuario:
+        flash("Email ou senha inválidos.")
+        return redirect("/login")
+
+    session["usuario_nome"] = usuario["NOME"]
+    session["usuario_email"] = usuario["EMAIL"]
+
+    if usuario["ADM"]:
+        return redirect("/restaurantes_admin")
+    else:
+        return redirect("/restaurantes")
+
+
 
 
 @app.route("/cadastro_usuario", methods=["GET", "POST"])
@@ -62,30 +96,35 @@ def cadastroUser():
 
 @app.route("/restaurantes", methods=["GET", "POST"])
 def restaurantes():
-    restaurantes = []
-    termo = request.form.get("termo", "")  # Pega o que o usuário digitou
+    termo = request.form.get("termo", "")
+    nome = session.get("usuario_nome", "Usuário")
+    email = session.get("usuario_email", "email@email.com")
+    restaurantes_lista = buscar_restaurantes(termo)
+    return render_template("restaurantes_user.html", restaurantes=restaurantes_lista, termo=termo, nome=nome, email=email)
 
+@app.route("/restaurantes_admin", methods=["GET", "POST"])
+def restaurantes_admin():
+    termo = request.form.get("termo", "")
+    restaurantes_lista = buscar_restaurantes(termo)
+    return render_template("restaurantes_admin.html", restaurantes=restaurantes_lista, termo=termo)
+
+def buscar_restaurantes(termo=""):
     conexao = mysql.connector.connect(**bd_config)
     # Retorna os resultados como dicionários
     cursor = conexao.cursor(dictionary=True)
 
     if termo:
-        query = "SELECT * FROM restaurantes WHERE nome LIKE %s"
+        query = "SELECT * FROM restaurante WHERE nome LIKE %s"
         cursor.execute(query, (f"%{termo}%",))
     else:
         # Se não houver busca, exibe todos (ou deixe vazio se preferir)
-        cursor.execute("SELECT * FROM restaurantes")
+        cursor.execute("SELECT * FROM restaurante")
 
     restaurantes = cursor.fetchall()
 
     cursor.close()
     conexao.close()
-    return render_template("restaurantes_user.html", restaurantes=restaurantes, termo=termo)
-    # if (usuario == user):
-    #
-    # elif (usuario == admin):
-    #     return render_template("restaurantes_admin.html", restaurantes=restaurantes, termo=termo)
-
+    return restaurantes
 
 if __name__ == "__main__":
     app.run(debug=True)
