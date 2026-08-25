@@ -59,6 +59,7 @@ body {
     font-weight: normal;
     color: currentColor;
     line-height: 1.1;
+    caret-color: transparent;
 }
 
 .logo-container .logo-brand {
@@ -69,15 +70,20 @@ body {
     align-items: center;
     position: relative;
     line-height: 1;
+    caret-color: transparent;
 }
 
 .pin-icon {
     display: inline-block;
-    width: 28px;
-    height: 38px;
-    background-color: currentColor;
-    
-    margin: 0 -2px;
+    width: 48px;
+    height: 58px;
+    background-image: url(/static/pin.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 -5px;
+    transform: translateY(8px);
+    caret-color: transparent;
 }
 
 .bg-red-page {
@@ -152,6 +158,13 @@ body {
 
 .auth-header-logo .logo-brand {
     color: var(--primary-red);
+}
+
+.auth-header-logo .pin-icon {
+    background-image: none;
+    background-color: var(--primary-red);
+    mask: url(/static/pin.png) center / contain no-repeat;
+    -webkit-mask: url(/static/pin.png) center / contain no-repeat;
 }
 
 .auth-card {
@@ -263,10 +276,11 @@ body {
     transform: rotate(45deg);
 }
 
-.gear-btn svg {
+.gear-btn img {
     width: 36px;
     height: 36px;
-    fill: currentColor;
+    object-fit: contain;
+    display: block;
 }
 
 .user-dropdown {
@@ -334,6 +348,13 @@ body {
     width: 100%;
 }
 
+.content-container h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
 .search-bar-container {
     background-color: var(--bg-light-grey);
     border-radius: var(--border-radius-pill);
@@ -342,22 +363,33 @@ body {
     align-items: center;
     gap: 12px;
     margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-bar-container form {
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .search-icon {
+    display: inline-block;
     width: 22px;
     height: 22px;
-    fill: none;
-    stroke: #000000;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    flex-shrink: 0;
+    background-image: url(/static/lupa.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    caret-color: transparent;
 }
 
 .search-input {
     border: none;
     background: transparent;
     width: 100%;
+    flex: 1;
     font-size: 1rem;
     outline: none;
     color: var(--text-color);
