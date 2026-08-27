@@ -25,6 +25,7 @@ def login():
     if request.method == "GET":
         return render_template("login.html")
 
+
     email = request.form.get("email")
     senha = request.form.get("senha")
     # baseado no email, ele retornará se a coluna ADM do campo deste email é true ou false
@@ -102,6 +103,13 @@ def restaurantes():
     restaurantes_lista = buscar_restaurantes(termo)
     return render_template("restaurantes_user.html", restaurantes=restaurantes_lista, termo=termo, nome=nome, email=email)
 
+
+@app.route("/sairDaConta")
+def sairDaConta():
+    session.clear()
+    flash("Você saiu da conta com sucesso.")
+    return redirect("/login")
+
 @app.route("/restaurantes_admin", methods=["GET", "POST"])
 def restaurantes_admin():
     termo = request.form.get("termo", "")
@@ -126,7 +134,7 @@ def buscar_restaurantes(termo=""):
     conexao.close()
     return restaurantes
 
-@app.route("/cadastro-restaurantes", methods = "GET, POST")
+@app.route("/cadastro-restaurantes", methods = ["GET", "POST"])
 def cadastroRestaurantes():
     nomeRestaurante = request.form.get("")
     descricao = request.form.get("") 
