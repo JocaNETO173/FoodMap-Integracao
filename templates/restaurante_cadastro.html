@@ -20,8 +20,8 @@
         </span>
 
         <div class="user-dropdown" id="userDropdown">
-            <div class="user-info-name">Administrador</div>
-            <div class="user-info-email">admin@foodmap.com</div>
+            <div class="user-info-name">{{ nome }}.admin</div>
+            <div class="user-info-email">{{ email }}</div>
             <div class="dropdown-divider"></div>
             <a href="/login" class="logout-btn">Sair da conta</a>
         </div>
@@ -34,29 +34,34 @@
                     Cadastrar Restaurante
                 </h2>
 
-                <form action="/restaurantes-admin" method="GET">
+                <form action="/cadastro-restaurantes" method="POST">
                     <div class="form-group" style="margin-bottom: 14px;">
                         <label for="nome-restaurante">Nome do Restaurante:</label>
-                        <input type="text" id="nome-restaurante" class="form-input" placeholder="Ex: Pizzaria Londrina" required>
+                        <input type="text" name="nome-restaurante" class="form-input" placeholder="Ex: Pizzaria Londrina" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label for="categoria">Categoria:</label>
+                        <input type="text" name="categoria" class="form-input" style="border-radius: 15px; resize: vertical; min-height: 90px;" placeholder="Ex: Lanchonete" required></input>
                     </div>
 
                     <div class="form-group" style="margin-bottom: 14px;">
                         <label for="descricao">Descrição:</label>
-                        <textarea id="descricao" class="form-input" style="border-radius: 15px; resize: vertical; min-height: 90px;" placeholder="Digite uma breve descrição..." required></textarea>
+                        <textarea name="descricao" class="form-input" style="border-radius: 15px; resize: vertical; min-height: 90px;" placeholder="Digite uma breve descrição..." required></textarea>
                     </div>
 
                     <div class="form-group" style="margin-bottom: 14px;">
                         <label for="endereco">Endereço:</label>
-                        <input type="text" id="endereco" class="form-input" placeholder="Rua, Número, Bairro - Londrina" required>
+                        <input type="text" name="endereco" class="form-input" placeholder="Rua, Número, Bairro - Londrina" required>
                     </div>
 
                     <div class="form-group" style="margin-bottom: 20px;">
                         <label for="imagem">URL da Imagem / Foto:</label>
-                        <input type="url" id="imagem" class="form-input" placeholder="https://exemplo.com/imagem.jpg">
+                        <input type="text" name="imagem" class="form-input" placeholder="https://exemplo.com/imagem.jpg">
                     </div>
 
                     <button type="submit" class="btn-primary-red">Salvar Restaurante</button>
-                    <a href="/restaurantes-admin" style="display: block; text-align: center; margin-top: 12px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Cancelar</a>
+                    <a href="/restaurantes_admin" style="display: block; text-align: center; margin-top: 12px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Cancelar</a>
                 </form>
             </div>
         </div>

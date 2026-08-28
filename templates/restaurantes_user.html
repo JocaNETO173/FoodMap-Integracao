@@ -43,8 +43,12 @@
             <h3>Resultados:</h3>
             <ul>
                 {% if restaurantes %}
-                {% for r in restaurantes %}
-                <li><strong>{{ r.nome }}</strong> - Categoria: {{ r.categoria }}</li>
+                {% for restaurante in restaurantes %}
+                <p>{{ restaurante.NOME }}</p>
+                <p>{{ restaurante.CATEGORIA }}</p>
+                <p>{{ restaurante.DESCRICAO }}</p>
+                <p>{{ restaurante.ENDERECO }}</p>
+                <img src="{{ restaurante.IMAGEM }}" alt="Imagem do Restaurante">
                 {% endfor %}
                 {% else %}
                 <p>Nenhum restaurante encontrado.</p>

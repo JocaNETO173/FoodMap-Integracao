@@ -1,5 +1,5 @@
 # Flash é utilizado para dar alertas ao usuário na tela
-from flask import Flask, render_template, request, redirect, flash, session
+from flask import Flask, render_template, request, redirect, flash, session, make_response
 import mysql.connector
 
 app = Flask(__name__)
@@ -14,6 +14,14 @@ bd_config = {
 }
 
 
+@app.after_request
+def no_cache(response):
+    response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -24,7 +32,6 @@ def login():
 
     if request.method == "GET":
         return render_template("login.html")
-
 
     email = request.form.get("email")
     senha = request.form.get("senha")
@@ -55,8 +62,6 @@ def login():
         return redirect("/restaurantes_admin")
     else:
         return redirect("/restaurantes")
-
-
 
 
 @app.route("/cadastro_usuario", methods=["GET", "POST"])
@@ -101,7 +106,11 @@ def restaurantes():
     nome = session.get("usuario_nome", "Usuário")
     email = session.get("usuario_email", "email@email.com")
     restaurantes_lista = buscar_restaurantes(termo)
-    return render_template("restaurantes_user.html", restaurantes=restaurantes_lista, termo=termo, nome=nome, email=email)
+    if nome == "Usuário":
+        flash("Você precisa estar logado para acessar esta página.")
+        return redirect("/login")
+    else:
+        return render_template("restaurantes_user.html", restaurantes=restaurantes_lista, termo=termo, nome=nome, email=email)
 
 
 @app.route("/sairDaConta")
@@ -110,11 +119,20 @@ def sairDaConta():
     flash("Você saiu da conta com sucesso.")
     return redirect("/login")
 
+
 @app.route("/restaurantes_admin", methods=["GET", "POST"])
 def restaurantes_admin():
+
     termo = request.form.get("termo", "")
+    nome = session.get("usuario_nome", "Usuário")
+    email = session.get("usuario_email", "email@email.com")
     restaurantes_lista = buscar_restaurantes(termo)
-    return render_template("restaurantes_admin.html", restaurantes=restaurantes_lista, termo=termo)
+    if nome == "Usuário":
+        flash("Você precisa estar logado para acessar esta página.")
+        return redirect("/login")
+    else:
+        return render_template("restaurantes_admin.html", restaurantes=restaurantes_lista, termo=termo, nome=nome, email=email)
+
 
 def buscar_restaurantes(termo=""):
     conexao = mysql.connector.connect(**bd_config)
@@ -134,28 +152,36 @@ def buscar_restaurantes(termo=""):
     conexao.close()
     return restaurantes
 
-@app.route("/cadastro-restaurantes", methods = ["GET", "POST"])
+
+@app.route("/cadastro-restaurantes", methods=["GET", "POST"])
 def cadastroRestaurantes():
-    nomeRestaurante = request.form.get("")
-    descricao = request.form.get("") 
-    endereco = request.form.get("") 
-    URLImage = request.form.get("") 
+    if request.method == "GET":
+        return render_template("restaurante_cadastro.html")
+
+    
+
+    nomeRestaurante = request.form.get("nome-restaurante")
+    categoria = request.form.get("categoria")
+    descricao = request.form.get("descricao")
+    endereco = request.form.get("endereco")
+    URLImage = request.form.get("imagem")
 
     try:
-
         conexao = mysql.connector.connect(**bd_config)
         cursor = conexao.cursor(dictionary=True)
 
-        query = "INSERT INTO restaurantes (NOME, CATEGORIA, ENDERECO, IMAGEM) VALUES (%s, %s, %s, %s)"
-        cursor.execute(query, (nomeRestaurante, descricao, endereco, URLImage))
+        query = "INSERT INTO restaurante (NOME, CATEGORIA, DESCRICAO, ENDERECO, IMAGEM) VALUES (%s, %s, %s, %s, %s)"
+        cursor.execute(query, (nomeRestaurante, categoria,
+                       descricao, endereco, URLImage))
         conexao.commit()
 
         cursor.close()
         conexao.close()
     except mysql.connector.Error as err:
         return f"Erro ao gravar no Banco: {err}"
-    
-    return render_template("restaurante_cadastro.html")
+
+    return redirect("/restaurantes_admin")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
