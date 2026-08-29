@@ -39,16 +39,33 @@
             </form>
         </div>
 
-        <div id="restaurants-list-container">
+<div id="restaurants-list-container">
             <h3>Resultados:</h3>
-            <ul>
-                {% if restaurantes %}
-                {% for restaurante in restaurantes %}
-                <p>{{ restaurante.NOME }}</p>
-                <p>{{ restaurante.CATEGORIA }}</p>
-                <p>{{ restaurante.DESCRICAO }}</p>
-                <p>{{ restaurante.ENDERECO }}</p>
-                <img src="{{ restaurante.IMAGEM }}" alt="Imagem do Restaurante">
+            {% if restaurantes %}
+            {% for restaurante in restaurantes %}
+            <ul class="restaurant-card">
+                <div class="card-top">
+                    <div class="restaurant-image-box">
+                        {% if restaurante.IMAGEM %}
+                        <img src="{{ restaurante.IMAGEM }}" alt="Imagem do Restaurante">
+                        {% else %}
+                        <span>Sem imagem</span>
+                        {% endif %}
+                    </div>
+                    <div class="restaurant-details">
+                        <h2 class="restaurant-title">
+                            <p>{{ restaurante.NOME }}</p>
+                        </h2>
+                        <p class="restaurant-description">
+                        <p>{{ restaurante.DESCRICAO }}</p>
+                        </p>
+                        <p class="restaurant-address">
+                        <p>{{ restaurante.ENDERECO }}</p>
+                        </p>
+                        <p class="restaurant-category">{{ restaurante.CATEGORIA }}</p>
+                    </div>
+                </div>
+
                 {% endfor %}
                 {% else %}
                 <p>Nenhum restaurante encontrado.</p>

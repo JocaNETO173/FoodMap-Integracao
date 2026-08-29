@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>FoodMap - Restaurantes (Admin)</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -42,50 +43,34 @@
             <ul class="restaurant-card">
                 <div class="card-top">
                     <div class="restaurant-image-box">
-                        {% if restaurante.IMAGEM}
+                        {% if restaurante.IMAGEM %}
                         <img src="{{ restaurante.IMAGEM }}" alt="Imagem do Restaurante">
                         {% else %}
                         <span>Sem imagem</span>
                         {% endif %}
                     </div>
                     <div class="restaurant-details">
-                        <h2 class="restaurant-title"></h2>
-                        <p class="restaurant-description"></p>
-                        <p class="restaurant-address"></p>
+                        <h2 class="restaurant-title">
+                            <p>{{ restaurante.NOME }}</p>
+                        </h2>
+                        <p class="restaurant-description">
+                        <p>{{ restaurante.DESCRICAO }}</p>
+                        </p>
+                        <p class="restaurant-address">
+                        <p>{{ restaurante.ENDERECO }}</p>
+                        </p>
+                        <p class="restaurant-category">{{ restaurante.CATEGORIA }}</p>
                     </div>
                 </div>
-                
-                <p>{{ restaurante.NOME }}</p>
-                <p>{{ restaurante.CATEGORIA }}</p>
-                <p>{{ restaurante.DESCRICAO }}</p>
-                <p>{{ restaurante.ENDERECO }}</p>
-                
+
                 {% endfor %}
                 {% else %}
                 <p>Nenhum restaurante encontrado.</p>
                 {% endif %}
             </ul>
         </div>
-        <!-- <div id="restaurants-list-container">
-            {% for restaurante in restaurantes %}
-            <div class="restaurant-card">
-                <div class="card-top">
-                    <div class="restaurant-image-box">
-                        {% if restaurante.IMAGEM %}
-                        <img src="{{ restaurante.IMAGEM }}" alt="Imagem do Restaurante" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-                        {% else %}
-                        <span>Sem imagem</span>
-                        {% endif %}
-                    </div>
-                    <div class="restaurant-details">
-                        <h2 class="restaurant-title">{{ restaurante.NOME }}</h2>
-                        <p class="restaurant-description">{{ restaurante.DESCRICAO }}</p>
-                        <p class="restaurant-address">{{ restaurante.ENDERECO }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div> -->
+
+
         <div class="admin-action-container">
             <a href="/cadastro-restaurantes" class="btn-admin-add">Cadastrar um Novo Restaurante</a>
         </div>

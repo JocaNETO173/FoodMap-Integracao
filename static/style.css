@@ -430,8 +430,17 @@ body {
     text-align: center;
     font-size: 0.9rem;
     color: #444444;
-    padding: 15px;
+    padding: 0;
     flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.restaurant-image-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .restaurant-details {
@@ -456,6 +465,20 @@ body {
     font-size: 0.95rem;
     color: #000000;
     margin-top: 5px;
+}
+
+.restaurant-category {
+    display: inline-block;
+    width: fit-content;
+    background: rgba(197, 0, 26, 0.1);
+    color: var(--primary-red);
+    border: 1px solid rgba(197, 0, 26, 0.22);
+    border-radius: var(--border-radius-pill);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .admin-action-container {

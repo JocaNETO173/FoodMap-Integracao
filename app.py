@@ -5,12 +5,19 @@ import mysql.connector
 app = Flask(__name__)
 app.secret_key = "sabonete"
 
+# bd_config = {
+#     'host': 'localhost',
+#     'user': 'root',
+#     'password': 'escola',
+#     'database': 'foodmap',
+#     'ssl_disabled': True
+# }
+
 bd_config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'escola',
-    'database': 'foodmap',
-    'ssl_disabled': True
+    'host': '127.0.0.1',
+    'user': 'flask_user',
+    'password': '#Pato26022025',
+    'database': 'foodmap'
 }
 
 
