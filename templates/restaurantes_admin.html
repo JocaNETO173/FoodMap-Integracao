@@ -27,13 +27,16 @@
             <div class="user-info-email">{{ email }}</div>
             <div class="dropdown-divider"></div>
             <a href="/sairDaConta" onclick="return confirm('Sair da Conta?')" class="logout-btn">Sair da conta</a>
+            <a href="/apagarConta" onclick="return confirm('Apagar sua conta? [ESTA AÇÃO SERÁ IRREVERSÍVEL!]')" class="logout-btn">Apagar Conta</a>
         </div>
     </header>
 
     <main class="content-container">
         <div class="search-bar-container">
-            <span class="search-icon" aria-hidden="true"></span>
-            <input type="text" class="search-input" placeholder="Pesquise aqui">
+            <form action="/restaurantes_admin" method="post">
+                <button class="search-icon" type="submit" aria-hidden="true"></button>
+                <input type="text" name="termo" class="search-input" placeholder="Pesquise aqui">
+            </form>
         </div>
 
         <div id="restaurants-list-container">
@@ -62,12 +65,13 @@
                         <p class="restaurant-category">{{ restaurante.CATEGORIA }}</p>
                     </div>
                 </div>
-
-                {% endfor %}
-                {% else %}
-                <p>Nenhum restaurante encontrado.</p>
-                {% endif %}
             </ul>
+
+            {% endfor %}
+            {% else %}
+            <p>Nenhum restaurante encontrado.</p>
+            {% endif %}
+
         </div>
 
 

@@ -1,23 +1,16 @@
 # Flash é utilizado para dar alertas ao usuário na tela
-from flask import Flask, render_template, request, redirect, flash, session, make_response
+from flask import Flask, render_template, request, redirect, flash, session, make_response, url_for
 import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = "sabonete"
 
-# bd_config = {
-#     'host': 'localhost',
-#     'user': 'root',
-#     'password': 'escola',
-#     'database': 'foodmap',
-#     'ssl_disabled': True
-# }
-
 bd_config = {
-    'host': '127.0.0.1',
-    'user': 'flask_user',
-    'password': '#Pato26022025',
-    'database': 'foodmap'
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'escola',
+    'database': 'foodmap',
+    'ssl_disabled': True
 }
 
 
@@ -48,7 +41,7 @@ def login():
         conexao = mysql.connector.connect(**bd_config)
         cursor = conexao.cursor(dictionary=True)
 
-        query = "SELECT NOME, EMAIL, ADM FROM usuario WHERE EMAIL = %s AND SENHA = %s"
+        query = "SELECT ID, NOME, EMAIL, ADM FROM usuario WHERE EMAIL = %s AND SENHA = %s"
         cursor.execute(query, (email, senha))
         usuario = cursor.fetchone()
 
@@ -62,6 +55,7 @@ def login():
         flash("Email ou senha inválidos.")
         return redirect("/login")
 
+    session["usuario_cod"] = usuario["ID"]
     session["usuario_nome"] = usuario["NOME"]
     session["usuario_email"] = usuario["EMAIL"]
 
@@ -126,6 +120,25 @@ def sairDaConta():
     flash("Você saiu da conta com sucesso.")
     return redirect("/login")
 
+@app.route("/apagarConta")
+def apagarConta():
+    codigo = session.get("usuario_cod")
+    try:
+        conexao = mysql.connector.connect(**bd_config)
+        cursor = conexao.cursor(dictionary=True)
+
+        query = "DELETE FROM usuario WHERE ID = %s"
+        cursor.execute(query, (codigo,))
+        conexao.commit()
+
+        cursor.close()
+        conexao.close()
+    except mysql.connector.Error as err:
+        return f"Erro ao apagar a conta: {err}"
+    session.clear()
+    flash("Sua conta foi apagada com sucesso.")
+    return redirect("/login")
+
 
 @app.route("/restaurantes_admin", methods=["GET", "POST"])
 def restaurantes_admin():
@@ -147,10 +160,11 @@ def buscar_restaurantes(termo=""):
     cursor = conexao.cursor(dictionary=True)
 
     if termo:
-        query = "SELECT * FROM restaurante WHERE nome LIKE %s"
+        query = "SELECT * FROM restaurante WHERE nome LIKE %s "
         cursor.execute(query, (f"%{termo}%",))
+        print("pesquisa")  
     else:
-        # Se não houver busca, exibe todos (ou deixe vazio se preferir)
+        # Se não houver busca, exibe todos
         cursor.execute("SELECT * FROM restaurante")
 
     restaurantes = cursor.fetchall()

@@ -25,21 +25,24 @@
             <div class="user-info-name">{{ nome }}</div>
             <div class="user-info-email">{{ email }}</div>
             <div class="dropdown-divider"></div>
-            <a href="/sairDaConta" onclick="return confirm('Sair da Conta?')" id="botaoSair" class="logout-btn">Sair da conta</a>
+            <a href="/sairDaConta" onclick="return confirm('Sair da Conta?')" id="botaoSair" class="logout-btn">Sair da
+                conta</a>
+            <a href="/apagarConta" onclick="return confirm('Apagar sua conta? [ESTA AÇÃO SERÁ IRREVERSÍVEL!]')"
+                class="logout-btn">Apagar Conta</a>
         </div>
     </header>
 
     <main class="content-container">
-        
+
         <h1>Olá {{ nome }}!</h1>
         <div class="search-bar-container">
-            <span class="search-icon" aria-hidden="true"></span>
-            <form method="POST">
-                <input type="text" name="termo" value="{{ termo }}" class="search-input" placeholder="Pesquise aqui">
+            <form action="/restaurantes" method="post">
+                <button class="search-icon" type="submit" aria-hidden="true"></button>
+                <input type="text" name="termo" class="search-input" placeholder="Pesquise aqui">
             </form>
         </div>
 
-<div id="restaurants-list-container">
+        <div id="restaurants-list-container">
             <h3>Resultados:</h3>
             {% if restaurantes %}
             {% for restaurante in restaurantes %}
@@ -65,12 +68,13 @@
                         <p class="restaurant-category">{{ restaurante.CATEGORIA }}</p>
                     </div>
                 </div>
-
-                {% endfor %}
-                {% else %}
-                <p>Nenhum restaurante encontrado.</p>
-                {% endif %}
             </ul>
+
+            {% endfor %}
+            {% else %}
+            <p>Nenhum restaurante encontrado.</p>
+            {% endif %}
+
         </div>
     </main>
     <script src="/static/js/script.js"></script>
