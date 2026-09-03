@@ -14,7 +14,7 @@
         <div class="logo-container logo-reload auth-header-logo">
             <span class="logo-welcome font-decorative">Bem vindo ao</span>
             <div class="logo-brand font-decorative">
-                Fo<span class="pin-icon"></span>dMap!
+                Fo<a href="/" class="pin-icon"></a>dMap!
             </div>
         </div>
 
@@ -24,22 +24,22 @@
             <form action="/cadastro_usuario" method="POST">
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label for="nome">Digite seu nome:</label>
-                    <input type="text" id="nome" name="nome" class="form-input" required>
+                    <input type="text" id="nome" name="nome" class="form-input" placeholder='Ex: Carlos' required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label for="email">Digite seu email:</label>
-                    <input type="email" id="email" name="email" class="form-input" required>
+                    <input type="email" id="email" name="email" class="form-input" placeholder='Ex: carlos@gmail.com' required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label for="senha">Digite sua senha:</label>
-                    <input min="8" type="password" id="senha" name="senha" class="form-input" required>
+                    <input min="8" type="password" id="senha" name="senha" class="form-input" placeholder="A senha deve conter no mínimo 8 caractéres." required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 18px;">
                     <label for="confirm-senha">Confirme sua senha:</label>
-                    <input min="8" type="password" id="confirm-senha" name="confirm-senha" class="form-input" required>
+                    <input min="8" type="password" id="confirm-senha" name="confirm-senha" class="form-input" placeholder="Digite exatamente a mesma senha acima." required>
                 </div>
 
                 {% with messages = get_flashed_messages() %}

@@ -186,7 +186,7 @@ body {
 .auth-card {
     background-color: var(--bg-light-grey);
     width: 100%;
-    max-width: 400px;
+    max-width: 425px;
     padding: 35px 30px;
     border-radius: var(--border-radius-lg);
     display: flex;
