@@ -11,7 +11,7 @@ ADM BOOLEAN NOT NULL
 
 CREATE TABLE IF NOT EXISTS restaurante(
 COD_RESTAURANTE INT AUTO_INCREMENT PRIMARY KEY,
-NOME VARCHAR(30) NOT NULL,
+NOME VARCHAR(100) NOT NULL,
 CATEGORIA VARCHAR(30) NOT NULL,
 DESCRICAO VARCHAR (1024) NOT NULL,
 ENDERECO VARCHAR(30) NOT NULL,
@@ -23,5 +23,10 @@ SELECT * FROM usuario;
 select * from restaurante;
 
 
+
+
 insert into usuario (EMAIL, NOME, SENHA, ADM) VALUES ("teste@gmail.com", "Teste", 123456789, false);
 insert into usuario (NOME, EMAIL, SENHA, ADM) VALUES ("Admin", "linuxmint@gmail.com", "patoquack", true);
+
+
+
