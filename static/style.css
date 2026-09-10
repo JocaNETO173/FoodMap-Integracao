@@ -501,8 +501,15 @@ body {
 
 .admin-action-container {
     display: flex;
+    position: sticky;
+    bottom: 15px; 
+    background-color: white; 
+    padding: 10px; 
+    z-index: 100; 
     justify-content: center;
-    margin-top: 20px;
+    border: 2px solid var(--primary-red);
+    border-radius: var(--border-radius-lg);
+    
 }
 
 .btn-admin-add {
@@ -522,3 +529,4 @@ body {
 .btn-admin-add:hover {
     background-color: var(--primary-red-hover);
 }
+
