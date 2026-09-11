@@ -24,3 +24,12 @@ COD_RESTAURANTE,NOME,CATEGORIA,DESCRICAO,ENDERECO,IMAGEM
 27,"ESTAÇÃO 18 ESPETARIA",Espetaria,"Espetinhos, porções e lanches.","RUA SERRA DOIS IRMÃOS, 275",.
 28,"BIG DOG LANCHES",Lanchonete,"Nada mlhor que lanche quando bate aquela fome não é memo? Experimente as nossas opções e garantimos que ficará surpreendido!","RUA SERRA GRANDE, 279",.
 29,"SR.HOT DOG",Lanchonete,"Há mais de uma década preparando lanche com sabor e capricho. No Sr.Hot Dog, voc^encontra hot dogs bem sevidos Dog Burguer Queijo, proções e refeições para matar a fome no jantar. Ingredientes combinados com o padrão da casa e opções para diferentes momentos. Escolha seu hot dog ou burguer favorito, complete o pedido com uma porção.","SERRA DO MARACAJU, 1750",.
+30,BIGGS,Lanchonete,"Biggs, hot dog prensado, burguer artesanal, combo lanche, pastel frito, pizza salgada e doce, etc.","AV. ARTHUR THOMAS, 1248",
+31,"RATINHO LANCHES",Lanchonete,"Aqui você encontra os melhores lanches preparados com a qualidade que você merece!","AV.ARTHUR THOMAS, 1406",
+32,"PIZZARIA FRANGOSO",Pizzaria,"Pizzaria Frangoso é mais recheio é mais gostoso!!","ARTHUR THOMAS, 1494",
+33,"RESTAURANTE D’FAMILIA",Restaurante,"Comida caseira de verdade, feita todos os dias com temperos especiais. Marmitas bem servidas, com qualidade, carinho e preço justo para matar sua fome."," ARTHUR THOMAS, 1622",
+34,"CHURRASCARIA CHIMARRÃO","Churrascaria,  e Marmitaria","Currasco, Churrascaria, Picanha, Filé Mignon, Carne assada, Marmitex, Marmita, Carne, Comida Brasileira, Rodízio.","AV. TIRADENTES, 3165 ",
+35,"PADARIA MANANCIAL",Padaria,"Melhor padaria da região oeste!!","RUA CRISTÓVÃO CARDOSO DE BARROS, 284",
+36,"BOM SALGADO",Salgadaria,"Salgados, Salgadiinhos de Centro, Salgadinhos para Festa, Churros doce de leite."," RUA PERÓ FERNANDES SARDINHA, 21",
+37,FRUTALIA,Sorveteria,"Sorvetes em potes, potinhos, picolés de fruta e ao leite, paletas mexicanas, açaí e o sorvetinho no pacotinho.","RUA CRISTÓVÃO CARDOSO DE BARROS, 26",
+38,"HOT DOGS DELIVERY",Lanchonete,"Trabalhamos com a melhor qualidade de alimentos, para entregar o melhor da região. ","RUA DOMINGOS JORGE VELHO 1085",
