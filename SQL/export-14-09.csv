@@ -1,38 +1,40 @@
 COD_RESTAURANTE,NOME,CATEGORIA,DESCRICAO,ENDERECO,IMAGEM
 1,"Sr. Moustache's",Hamburgueria,"Aqui você poderá pedir nossos hamburgueres deliciosos, com qualidade e sabor inigualaveis quer experimentar?","Rua Waldomiro Fernandes 237",.
 2,"Espetaria Jardim do Lago",Espetaria,"Os espetinhos são anotados individualmente e preparados no momento do pedido, temos 26 tipos incluindo vegano, doces e premium, que variam de preços. Também servimos porções, caipirinhas, bebidas alcoólicas e não alcoólicas. Um ambiente agradável e amigável a todas as pessoas.","Castelo Branco 777",.
-3,"Tia Augusta",Restaurante,"TIA AUGUSTA BAR E RESTAURANTE LTDA","Waldomiro Fernandes, 237",.
-4,"Restaurante Pinheiros",Restaurante,"O Melhor da Comida Caseira! Preço justo e qualidade incomparavel!","RUA WALDOMIRO FERNANDES, 282",.
-6,"Kass Pizzaria",Pizzaria,"Só pizza top, ótimo ingredientes e qualidade inigualavel.","RUA JOÃO BORGES, 138",.
-7,"2D espetaria",Espetaria,"espetaria "," RUA JOÃO BORGES, 133",.
-8,"Ops Hamburgueria ",Lanchonete,"Ops Hamburgueria foi criada em 2018 com a missao de oferecer  a você um hamburguer artesanal com ingredientes de qualidade e burguer de tomanho da sua fome.","RUA JOÃO BORGES, 439",.
-9,"Planet Pizza",Pizzaria,"Abre domingo as 18:30","RUA JOÃO BORGES, 536",.
-10,Ki-Recheio,"Salgados de Festas e Bebidas","Salgados in Geral","RUA BLAISE PASCAL, 226",.
-11,"Pó de Lua",Doceria,"desde 2014 levando delícias a sua casa e as suas festas","RUA ALFRED BERNHARD NOBEL, 43",.
+3,"Tia Augusta",Restaurante,"No Tia Augusta, você encontra comida saborosa, feita com carinho e aquele gostinho especial de comida caseira. Um ambiente acolhedor para aproveitar uma boa refeição e momentos deliciosos à mesa.","Waldomiro Fernandes, 237",.
+4,"Restaurante Pinheiros",Restaurante,"O Restaurante Pinheiros oferece uma experiência gastronômica saborosa e acolhedora, com opções preparadas para quem valoriza uma boa refeição. Um lugar perfeito para reunir a família, os amigos ou simplesmente aproveitar aquele almoço especial.","RUA WALDOMIRO FERNANDES, 282",.
+6,"Kass Pizzaria",Pizzaria,"Na Kass Pizzaria, sabor e qualidade se encontram em cada pizza. Massas deliciosas, recheios caprichados e combinações irresistíveis para deixar seu momento ainda mais especial. Perfeita para compartilhar ou aproveitar sozinho!","RUA JOÃO BORGES, 138",.
+7,"2D espetaria",Espetaria,"Na 2D Espetaria, o sabor é preparado na brasa. Espetinhos deliciosos, carnes bem preparadas e acompanhamentos saborosos para você aproveitar cada momento. O lugar perfeito para reunir os amigos, curtir a família e saborear uma boa comida em um ambiente descontraído."," RUA JOÃO BORGES, 133",.
+8,"Ops Hamburgueria ",Lanchonete,"Na Ops Hamburgueria, o clássico hambúrguer ganha muito sabor e personalidade. Hambúrgueres preparados com ingredientes selecionados, combinações caprichadas e aquele sabor que faz você querer pedir de novo.","RUA JOÃO BORGES, 439",.
+9,"Planet Pizza",Pizzaria,"Prepare-se para uma viagem pelo universo do sabor na Planet Pizza! Pizzas deliciosas, recheios caprichados e opções para todos os gostos. O destino perfeito para quem ama uma boa pizza.","RUA JOÃO BORGES, 536",.
+10,Ki-Recheio,"Salgados de Festas e Bebidas","Na Ki-Recheios, sua festa fica ainda mais gostosa! Encontre deliciosos salgados para festas e bebidas para acompanhar seus momentos especiais. Qualidade, praticidade e muito sabor para comemorar com quem você gosta.","RUA BLAISE PASCAL, 226",.
+11,"Pó de Lua",Doceria,"A Pó de Lua transforma doces em momentos especiais. Delícias preparadas com carinho, sabor e criatividade para adoçar seu dia, surpreender alguém especial ou deixar sua comemoração ainda mais gostosa.","RUA ALFRED BERNHARD NOBEL, 43",.
 12,"The Best Açai",Açaiteria,"O The Best Açai é a maior rede de açai self-service do mundo! Açai do seu jeito em casa!!","RUA ALFRED BERNHARD NOBEL, 1",.
-13,"Açougue Restaurante",Açougue,"açougue e restaurante","AVENIDA ARTHUR THOMAS, 815",.
+13,"Açougue Restaurante","Açougue & Restaurante","No Açougue Restaurante, sabor e qualidade são protagonistas. Carnes e pratos preparados para quem aprecia uma boa refeição, com aquele toque especial que transforma cada momento à mesa em uma experiência deliciosa.","AVENIDA ARTHUR THOMAS, 815",.
 14,"Jack Pizzaria",Pizzaria,"Pizza Grande, Combo familia pizza big, mais broto, pizza grande 60cm","RUA SERRA DOS PARECIS, 205",.
 15,"Restaurante Cozinha Paraense",Restaurante,"O Cozinha Paraense traz, grandes novidades da culinaria Amazonica disponiveis in Londrina, pratos tipicos do norte do Brasil.","RUA SOROCABA, 685",.
-16,"Mauros lanches",Lanchonete,Lanchonete,"ARTHUR THOMAS, 830",.
-17,"PIZZARIA E CASA DE MASSAS LAZANHETE",Pizzaria,"pizzaria, e casa de massas ","ARTHUR THOMAS, 1020",.
+16,"Mauros lanches",Lanchonete,"No Mauros Lanche, matar a fome fica muito mais gostoso! Lanches preparados com muito sabor e capricho, perfeitos para qualquer hora do dia. Uma opção deliciosa para quem não abre mão de um bom lanche.","ARTHUR THOMAS, 830",.
+17,"PIZZARIA E CASA DE MASSAS LAZANHETE",Pizzaria,"Na Lazanhete, você encontra o melhor da culinária italiana em pizzas e massas deliciosas. Pratos preparados com carinho, ingredientes saborosos e aquele toque especial que transforma uma refeição em um momento inesquecível.","ARTHUR THOMAS, 1020",.
 18,"Caseiro Grill",Restaurante,"Marmitas de qualidade com tempero caseiro há quase 30 anos in Londrina.","ARTHUR THOMAS, 1050",.
-19,O’VIEIRA,"Massas Artesanais","Massas Artesanais","ARTHUR THOMAS, 1058",.
-21,"Costela na Brasa",Restaurante,"sei la?","RUA SERRA DA TABATINGA, 1028",.
-23,"VIVI MOIMESSO",Doceria,"100% Natural livre de conservantes e industrializados","AVENIDA SERRA ESPERANÇA, 930",.
-24,"Seband Paes",Padaria,"Tem pão","AVENIDA SERRA ESPERANÇA, 988",.
-26,"Casa da Pizza",Pizzaria,"melhor pizzaria da região","AVENIDA SERRA ESPERANÇA, 1000",.
-27,"ESTAÇÃO 18 ESPETARIA",Espetaria,"Espetinhos, porções e lanches.","RUA SERRA DOIS IRMÃOS, 275",.
+19,O’VIEIRA,"Massas Artesanais","Na O’Vieira, as massas artesanais são preparadas com cuidado para proporcionar uma experiência cheia de sabor. Qualidade, tradição e carinho em cada preparo para quem aprecia uma boa massa feita de forma especial.","ARTHUR THOMAS, 1058",.
+21,"Costela na Brasa",Restaurante,"No Costela na Brasa, os amantes de uma boa carne encontram sabor de verdade. Carnes preparadas na brasa, com aquele aroma irresistível e o sabor marcante que combina perfeitamente com uma refeição especial.","RUA SERRA DA TABATINGA, 1028",.
+23,"VIVI MOIMESSO",Doceria,"Na Vivi Moimesso, cada doce é preparado para transformar momentos simples em lembranças deliciosas. Doces feitos com carinho, capricho e muito sabor para adoçar suas comemorações ou deixar qualquer dia mais especial.","AVENIDA SERRA ESPERANÇA, 930",.
+24,"Seband Paes",Padaria,"Oferecemos pães fresquinhos, deliciosos doces, salgados e opções para aquele café especial, sempre buscando qualidade, sabor e aquele gostinho de feito com carinho.
+
+Seja para começar bem o dia, fazer uma pausa para um café ou levar algo gostoso para casa, a Seband Pães é o lugar certo para você!","AVENIDA SERRA ESPERANÇA, 988",.
+26,"Casa da Pizza",Pizzaria,"A Casa da Pizza é o lugar certo para quem ama uma pizza bem preparada e cheia de sabor. Com opções deliciosas e recheios caprichados, é perfeita para reunir a família e os amigos em torno de uma boa pizza.","AVENIDA SERRA ESPERANÇA, 1000",.
+27,"ESTAÇÃO 18 ESPETARIA",Espetaria,"Na Estação 18 Espetaria, o sabor encontra a brasa! Espetinhos e delícias preparados com muito capricho para acompanhar aquele encontro com os amigos, um happy hour ou simplesmente matar a vontade de comer algo especial.","RUA SERRA DOIS IRMÃOS, 275",.
 28,"BIG DOG LANCHES",Lanchonete,"Nada mlhor que lanche quando bate aquela fome não é memo? Experimente as nossas opções e garantimos que ficará surpreendido!","RUA SERRA GRANDE, 279",.
 29,"SR.HOT DOG",Lanchonete,"Há mais de uma década preparando lanche com sabor e capricho. No Sr.Hot Dog, voc^encontra hot dogs bem sevidos Dog Burguer Queijo, proções e refeições para matar a fome no jantar. Ingredientes combinados com o padrão da casa e opções para diferentes momentos. Escolha seu hot dog ou burguer favorito, complete o pedido com uma porção.","SERRA DO MARACAJU, 1750",.
 30,BIGGS,Lanchonete,"Biggs, hot dog prensado, burguer artesanal, combo lanche, pastel frito, pizza salgada e doce, etc.","AV. ARTHUR THOMAS, 1248",
 31,"RATINHO LANCHES",Lanchonete,"Aqui você encontra os melhores lanches preparados com a qualidade que você merece!","AV.ARTHUR THOMAS, 1406",
 32,"PIZZARIA FRANGOSO",Pizzaria,"Pizzaria Frangoso é mais recheio é mais gostoso!!","ARTHUR THOMAS, 1494",
 33,"RESTAURANTE D’FAMILIA",Restaurante,"Comida caseira de verdade, feita todos os dias com temperos especiais. Marmitas bem servidas, com qualidade, carinho e preço justo para matar sua fome."," ARTHUR THOMAS, 1622",
-34,"CHURRASCARIA CHIMARRÃO","Churrascaria,  e Marmitaria","Currasco, Churrascaria, Picanha, Filé Mignon, Carne assada, Marmitex, Marmita, Carne, Comida Brasileira, Rodízio.","AV. TIRADENTES, 3165 ",
-35,"PADARIA MANANCIAL",Padaria,"Melhor padaria da região oeste!!","RUA CRISTÓVÃO CARDOSO DE BARROS, 284",
+34,"CHURRASCARIA CHIMARRÃO","Churrascaria & Marmitaria","Currasco, Churrascaria, Picanha, Filé Mignon, Carne assada, Marmitex, Marmita, Carne, Comida Brasileira, Rodízio.","AV. TIRADENTES, 3165 ",
+35,"PADARIA MANANCIAL",Padaria,"Na Padaria Manancial, o dia começa e termina com muito sabor. Pães fresquinhos, doces, salgados e opções deliciosas para acompanhar seu café ou levar para casa. Qualidade e carinho em cada produto.","RUA CRISTÓVÃO CARDOSO DE BARROS, 284",
 36,"BOM SALGADO",Salgadaria,"Salgados, Salgadiinhos de Centro, Salgadinhos para Festa, Churros doce de leite."," RUA PERÓ FERNANDES SARDINHA, 21",
-37,FRUTALIA,Sorveteria,"Sorvetes em potes, potinhos, picolés de fruta e ao leite, paletas mexicanas, açaí e o sorvetinho no pacotinho.","RUA CRISTÓVÃO CARDOSO DE BARROS, 26",
+37,FRUTALIA,SorveterIa,"Sorvetes em potes, potinhos, picolés de fruta e ao leite, paletas mexicanas, açaí e o sorvetinho no pacotinho.","RUA CRISTÓVÃO CARDOSO DE BARROS, 26",
 38,"HOT DOGS DELIVERY",Lanchonete,"Trabalhamos com a melhor qualidade de alimentos, para entregar o melhor da região. ","RUA DOMINGOS JORGE VELHO 1085",
-39,"DU ANÃO",Trailer,"Venha provar o caldo de cana Du Anão, o melhor da região Oeste.","RUA JOAQUIM DE MATOS BARRETO 1566",
-40,FLOW,Restaurante,"A FLOW se propõe a descomplicar a rotina de quem busca seu ritmo. Sendo saudável sem ser chato!","AV.AYRTON SENNA DA SILVA, 160",
-41,"DOMINO’S PIZZA",Pizzaria,"De uma pizzaria local no estado americano de Michigan, em 1960, à maior rede de pizzarias do mundo: a Domino’s Pizza está presente hoje em 85 países, com mais de 16 mil lojas. No Brasil, desembarcamos em 1993, inaugurando uma unidade no Rio de Janeiro, no bairro de Botafogo. Ao longo desses anos, investimos em tecnologia e delivery para melhorar a experiência dos amantes de pizza. Somos líderes em número de lojas - em 2020, somamos 300 lojas espalhadas pelo país - e estamos investindo R$ 250 milhões para dobrar de tamanho e chegar a 650 unidades em 2023.","AV.AYRTON SENNA DA SILVA, 300",
+39,"DU ANÃO",Trailer,"No Du Anão, você encontra aquele sabor simples e irresistível que combina com qualquer momento. Caldo de cana fresquinho e opções deliciosas para acompanhar, preparados com qualidade e muito capricho. Uma parada perfeita para matar a fome e se refrescar.","RUA JOAQUIM DE MATOS BARRETO 1566",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpRcBX48qiQILqT-bdJTNojRCosYvJWU96HQtZuQ4yRAHjwjBjMK628wkF&s=10
+40,FLOW,Restaurante,"A FLOW se propõe a descomplicar a rotina de quem busca seu ritmo. Sendo saudável sem ser chato!","AV.AYRTON SENNA DA SILVA, 160",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL5KgnAveLk6m4YvQbRX8Z4mXiBdHm07fPlO0EoIZnxMzATnEXUJ34u4zP&s=10
+41,"DOMINO’S PIZZA",Pizzaria,"A Domino's é uma das redes de pizzaria mais conhecidas do mundo, oferecendo pizzas saborosas, com diferentes opções de massas, sabores e combinações. Uma escolha prática para quem quer aproveitar uma boa pizza em qualquer ocasião, seja em família, com amigos ou em um momento especial.","AV.AYRTON SENNA DA SILVA, 300",https://www.cidadeoferta.com.br/storage/offers/5602-dominos-pizza-londrina-grande-ou-media-12.jpg
