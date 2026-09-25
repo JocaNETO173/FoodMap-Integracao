@@ -1,5 +1,5 @@
 # Flash é utilizado para dar alertas ao usuário na tela
-from flask import Flask, render_template, request, redirect, flash, session
+from flask import Flask, render_template, request, redirect, flash, session, make_response
 import mysql.connector
 
 app = Flask(__name__)
